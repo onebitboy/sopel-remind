@@ -145,7 +145,7 @@ def remind_in(bot: SopelWrapper, trigger: Trigger):
     args = trigger.group(2)
 
     if args is None:
-        bot.reply("When and what would you like me to remind?")
+        bot.reply("When and of what would you like me to remind you?")
         return
 
     try:
@@ -168,7 +168,7 @@ def remind_in(bot: SopelWrapper, trigger: Trigger):
         zone=display_timezone.zone or 'UTC',
         time=when,
     )
-    bot.reply('I will remind you that at %s' % display_when)
+    bot.reply('I will remind you of that at %s' % display_when)
 
 
 @plugin.command('at')
@@ -193,7 +193,7 @@ def remind_at(bot: SopelWrapper, trigger: Trigger):
     args = trigger.group(2)
 
     if args is None:
-        bot.reply("When and what would you like me to remind?")
+        bot.reply("When and of what would you like me to remind you?")
         return
 
     user_tz = backend.get_user_timezone(bot, trigger.nick, trigger.sender)
@@ -219,4 +219,4 @@ def remind_at(bot: SopelWrapper, trigger: Trigger):
         zone=display_timezone.zone or 'UTC',
         time=when,
     )
-    bot.reply('I will remind you that at %s' % display_when)
+    bot.reply('I will remind you of that at %s' % display_when)
